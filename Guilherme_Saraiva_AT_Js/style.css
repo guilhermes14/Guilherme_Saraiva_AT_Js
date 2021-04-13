@@ -1,0 +1,117 @@
+*{
+    background-color: beige;
+    color: cadetblue;
+    font-family:Impact,'Arial Narrow Bold', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+}
+
+h1, h2, button{
+  justify-content: center;
+  text-align: center;
+}
+
+img{
+    width: 80px;
+}
+
+body .jogoTabuleiro{
+    display: flex;
+}
+
+.jogoTabuleiro{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1000px;
+}
+
+#jogo{
+    pointer-events:none;
+}
+
+button {
+	display: inline-block;
+    margin: 0;
+    padding: 0.75rem 1rem;
+	border: 0;
+	border-radius: 0.317rem;
+	background-color: #aaa;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 1rem;
+    line-height: 1.5;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+button:hover {
+	opacity: 0.85;
+}
+
+button:active {
+	box-shadow: inset 0 3px 4px hsla(0, 0%, 0%, 0.2);
+}
+
+button:focus {
+	outline: thin dotted #444;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+.carta{
+    position: relative;
+    margin: 5px;
+    width: 20%;
+    height: 20%;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.cartaFrontal, .cartaVerso{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background: rosybrown;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2.5px grey;
+    backface-visibility: hidden;
+}
+
+.carta:hover{
+    transform: scale(.98);
+    transition: transform .2s;
+}
+
+.carta.virar{
+    transform: rotateX(180deg);
+}
+
+.cartaFrontal{
+    transform: rotateX(180deg);
+}
+
+#tempoJogo{
+    margin-top: 20px;
+    font-size: larger;
+    justify-content: center;
+    text-align: center;
+}
+
+#tempoJogo:before {
+    content:'Tempo: ';
+}
+
+
